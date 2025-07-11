@@ -8,23 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SoulsFormats;
-using SoulsFormats.ESD;
+using ESDLang.Adapter;
 
 namespace Zeditor
 {
     public partial class PropertyEditor : Form
     {
 
-        ESD currentESD;
+        ESDL currentESD;
 
-        public PropertyEditor(ESD esd)
+        public PropertyEditor(ESDL esd)
         {
             currentESD = esd;
             InitializeComponent();
+            // TODO: Replace this with a dedicated list, since the types have changed and are no longer clear to end user
             compressionBox.DataSource = Enum.GetValues(typeof(DCX.Type)).Cast<DCX.Type>().ToList();
             compressionBox.SelectedItem = currentESD.Compression;
             nameBox.Text = currentESD.Name;
 
+            // TODO: Support later games?
             if (currentESD.DarkSoulsCount == 1) DS1_Btn.Checked = true;
             else if (currentESD.DarkSoulsCount == 2) DS2BB_Btn.Checked = true;
             else if (currentESD.DarkSoulsCount == 3) DS3_Btn.Checked = true;

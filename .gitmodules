@@ -1,0 +1,6 @@
+[submodule "SoulsFormatsNEXT"]
+	path = SoulsFormatsNEXT
+	url = https://github.com/soulsmods/SoulsFormatsNEXT
+[submodule "ESDLang"]
+	path = ESDLang
+	url = https://github.com/thefifthmatt/ESDLang

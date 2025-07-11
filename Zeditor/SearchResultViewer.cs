@@ -1,5 +1,4 @@
-﻿using SoulsFormats.ESD;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ESDLang.Adapter;
 
 namespace Zeditor
 {
     public partial class SearchResultViewer : Form
     {
-        public SearchResultViewer(Dictionary<ESD.Condition, List<long>> results)
+        public SearchResultViewer(Dictionary<ESDL.Condition, List<long>> results)
         {
             InitializeComponent();
             dgv.Columns.Add("Condition", "Condition");

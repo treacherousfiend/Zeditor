@@ -1,5 +1,4 @@
-﻿using SoulsFormats.ESD;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using ESDLang.Adapter;
 
 namespace Zeditor
 {
@@ -16,7 +16,7 @@ namespace Zeditor
     {
         public long StateID => Convert.ToInt64(idBox.Value);
         public string StateName => nameBox.Text.Trim();
-        public StateDataEditor(ESD.State state)
+        public StateDataEditor(ESDL.State state)
         {
             InitializeComponent();
             nameBox.Text = state.Name;
